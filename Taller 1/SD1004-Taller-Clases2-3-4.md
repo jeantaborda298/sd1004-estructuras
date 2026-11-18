@@ -24,12 +24,23 @@ Para cada situación, indica si corresponde a **O(1)**, **O(log n)**, **O(n)** o
 
 1. Buscar una palabra en un diccionario físico, abriendo siempre por la mitad de las páginas que quedan.
 
-R/ En cada paso se reduce la búsqueda a la mitad de las páginas restantes, lo que permite encontrar la palabra sin necesidad de revisar todas las páginas del diccionario.
+R/ O(log n): En cada paso se reduce la búsqueda a la mitad de las páginas restantes, lo que permite encontrar la palabra sin necesidad de revisar todas las páginas del diccionario.
 
 2. Revisar, uno por uno, cada carné en una caja de carnés de estudiantes hasta encontrar el que buscas.
+
+R/ O(n): Al revisar las carnés uno por uno, la cantidad de comparaciones tiene un aumento considerable, a la cantidad de carnés que haya en la caja en el peor de los casos.
+
 3. Sacar la primera carta de un mazo ya barajado.
+
+R/ O(1): Sin importar la cantidad de cartas que tenga el mazo, siempre se realiza la misma operación para sacar la primera carta.
+
 4. Comparar cada estudiante de un salón con cada uno de los demás estudiantes, para ver si algún par cumple años el mismo día.
+
+R/ O(n²): Por cada estudiante se debe comparar su fecha de cumpleaños con la de los demás, haciendo que la cantidad de comparaciones crezca de forma cuadrática.
+
 5. Consultar la hora en tu reloj.
+
+R/ O(1): Mirar la hora requiere una acción directa que no depende de la cantidad de datos ni necesita operaciones adicionales.
 
 ### 1.2 De la vida real al análisis
 
