@@ -49,6 +49,10 @@ Piensa en una tarea cotidiana (que no sea de las ya usadas en clase) que hagas d
 - Descríbela en 2-3 líneas.
 - Explica qué pasaría si la "entrada" (n) se hiciera 10 veces más grande.
 
+R/ Por ejemplo lavar los platos después de comer, por cada plato sucio debo realizar el mismo proceso de lavado, por lo que el tiempo aumenta proporcionalmente a la cantidad de platos.
+
+¿Qué pasaría si la entrada fuera 10 veces más grande? Si la cantidad de platos aumenta 10 veces, el tiempo necesario para lavarlos también aumentaría 10 veces masomenos.
+
 ### 1.3 ¿Cuál escalar mejor?
 
 Tienes dos formas de resolver el mismo problema:
@@ -58,12 +62,19 @@ Tienes dos formas de resolver el mismo problema:
 
 Para un conjunto pequeño de datos (n = 5), la Forma A es más rápida en la práctica. Aun así, ¿cuál recomendarías usar si no sabes qué tan grande será n en el futuro? Justifica tu respuesta pensando en qué pasa a medida que n crece.
 
+R/ De sugerencia utilizar la Forma B, ya que, aunque la Forma A sea más rápida con pocos datos, la Forma B aumenta su cantidad de operaciones de manera más moderada a medida que crece la cantidad de elementos, siendo más eficiente para grandes cantidades de datos.
+
 ### 1.4 Verdadero o falso (justifica siempre)
 
 a. Un algoritmo O(1) siempre es más rápido en segundos reales que uno O(n).
+
+R/Falso: Big O indica cómo aumenta la cantidad de operaciones, pero no da el tiempo exacto de ejecución de un algoritmo.
 b. La notación Big O describe cómo crece el tiempo de ejecución a medida que crecen los datos, no el tiempo exacto en segundos.
+
+R/ Verdadero: Big O permite identificar cómo aumenta el costo de ejecución de un algoritmo al incrementar la cantidad de datos, sin dar su duración exacta en segundos.
 c. Buscar por índice en un arreglo (`arreglo[5]`) es O(n), porque hay que recorrer los primeros 5 elementos.
 
+R/ Falso: Es O(1)Al conocer el índice del elemento, podemos acceder directamente a su posición en el arreglo sin necesidad de recorrer los elementos anteriores.
 ---
 
 ## Parte 2 — Arreglos 1D
@@ -73,6 +84,10 @@ c. Buscar por índice en un arreglo (`arreglo[5]`) es O(n), porque hay que recor
 Vas a guardar las calificaciones de 6 estudiantes de un curso en un arreglo llamado `notas`.
 
 1. Dibuja el arreglo con sus 6 casillas, mostrando el índice de cada una (recuerda: empieza en 0).
+
+<img width="1024" height="572" alt="image" src="https://github.com/user-attachments/assets/2181880d-e945-43ec-a5b9-91b58fbcc8e7" />
+
+
 2. Si `notas = [3.5, 4.2, 2.8, 5.0, 3.9, 4.5]`, ¿qué valor y qué índice tiene la tercera nota que ingresaste?
 3. ¿Cuál es la instrucción (en pseudocódigo) para acceder directamente a la nota del último estudiante sin recorrer el arreglo?
 
