@@ -125,19 +125,16 @@ Un usuario realiza, en este orden, las acciones `escribir`, `borrar` y `pegar`. 
 
 - Dibuja la pila de acciones antes y después de cada deshacer.
 
-  **R/**
+  R/
 
-  ```text
-  Antes de deshacer:   tope → [pegar] → [borrar] → [escribir] → nulo
-  Primer deshacer:     tope → [borrar] → [escribir] → nulo
-  Segundo deshacer:    tope → [escribir] → nulo
-  ```
+<img width="991" height="150" alt="image" src="https://github.com/user-attachments/assets/475f8188-8e38-4b29-b7ef-3a548204715c" />
+
 
   En los tres diagramas, `escribir` permanece en la base de la pila.
 
 - ¿Qué acción se deshace primero? Explica por qué una pila representa este comportamiento.
 
-  **R/** Se deshace primero `pegar`, ya que fue la última acción realizada. Después se deshace `borrar`. La pila es adecuada porque su regla LIFO permite retirar las acciones en el orden inverso al que fueron realizadas.
+  R/ Se deshace primero `pegar`, ya que fue la última acción realizada. Después se deshace `borrar`. La pila es adecuada porque su regla LIFO permite retirar las acciones en el orden inverso al que fueron realizadas.
 
 ---
 
@@ -161,7 +158,7 @@ encolar("Teo")
 
 ¿Qué personas quedan esperando y en qué orden?
 
-**R/** Las operaciones modifican la cola así:
+R/ Las operaciones modifican la cola así:
 
 ```text
 Inicio: frente = final = nulo
@@ -200,13 +197,13 @@ frente → [Sol] → [Mia] → [Teo] → nulo
                          final
 ```
 
-**R/** Quedan esperando `Sol`, `Mia` y `Teo`, en ese orden. Sol está en el frente y será la próxima persona atendida; Teo está al final porque fue la última persona en llegar.
+R/ Quedan esperando `Sol`, `Mia` y `Teo`, en ese orden. Sol está en el frente y será la próxima persona atendida; Teo está al final porque fue la última persona en llegar.
 
 ### 3.2 Operaciones y casos límite
 
 1. Escribe pseudocódigo para `atender(cola)`, que retire y devuelva a la persona del frente.
 
-   **R/**
+   R/
 
    ```text
    función atender(cola):
@@ -223,11 +220,11 @@ frente → [Sol] → [Mia] → [Teo] → nulo
 
 2. ¿Qué debería ocurrir si se intenta desencolar una cola vacía? Describe cómo lo manejarías.
 
-   **R/** Se debe comprobar si la cola está vacía antes de retirar un elemento. Si lo está, se devuelve `nulo` y se informa que no hay personas esperando, sin modificar las referencias de la cola.
+   R/ Se debe comprobar si la cola está vacía antes de retirar un elemento. Si lo está, se devuelve `nulo` y se informa que no hay personas esperando, sin modificar las referencias de la cola.
 
 3. Explica por qué agregar al frente y retirar desde el final no representa correctamente una fila FIFO si se mantienen esas mismas operaciones.
 
-   **R/** Si se mantienen las definiciones del taller, agregar al frente y retirar desde el final contradice el funcionamiento establecido de `encolar()` y `desencolar()`. Sin embargo, invertir ambos extremos sí puede conservar la regla FIFO: el primero que entra sigue siendo el primero que sale. Por ejemplo, si se agregan Ana y luego Luis al frente, la cola queda `[Luis, Ana]` y al retirar desde el final sale Ana primero. Por lo tanto, lo que cambia es la orientación de la cola, no necesariamente el orden de atención.
+   R/ Si se mantienen las definiciones del taller, agregar al frente y retirar desde el final contradice el funcionamiento establecido de `encolar()` y `desencolar()`. Sin embargo, invertir ambos extremos sí puede conservar la regla FIFO: el primero que entra sigue siendo el primero que sale. Por ejemplo, si se agregan Ana y luego Luis al frente, la cola queda `[Luis, Ana]` y al retirar desde el final sale Ana primero. Por lo tanto, lo que cambia es la orientación de la cola, no necesariamente el orden de atención.
 
 ---
 
@@ -247,9 +244,9 @@ Parte de la lista vacía y aplica en orden estas operaciones:
 
 Dibuja la lista después de cada operación. En el último dibujo, muestra explícitamente que el nodo final apunta a `nulo`.
 
-**R/** Estado inicial: `cabeza → nulo`. Cada flecha entre nodos representa la referencia `siguiente`.
+R/ Estado inicial: `cabeza → nulo`. Cada flecha entre nodos representa la referencia `siguiente`.
 
-**R/ 1. Insertar 18 al final.**
+R/ 1. Insertar 18 al final.
 
 ```text
 cabeza = último → [18] → nulo
@@ -257,7 +254,7 @@ cabeza = último → [18] → nulo
 
 Como la lista estaba vacía, el nuevo nodo se convierte en la cabeza y el último nodo.
 
-**R/ 2. Insertar 7 al comienzo.**
+R/ 2. Insertar 7 al comienzo.
 
 ```text
 cabeza → [7] → [18] → nulo
@@ -267,7 +264,7 @@ cabeza → [7] → [18] → nulo
 
 El nodo `7` apunta a `18` y se convierte en la nueva cabeza.
 
-**R/ 3. Insertar 24 al final.**
+R/ 3. Insertar 24 al final.
 
 ```text
 cabeza → [7] → [18] → [24] → nulo
@@ -277,7 +274,7 @@ cabeza → [7] → [18] → [24] → nulo
 
 Se cambia el enlace siguiente de `18` para que apunte a `24`.
 
-**R/ 4. Insertar 13 después de 7.**
+R/ 4. Insertar 13 después de 7.
 
 ```text
 cabeza → [7] → [13] → [18] → [24] → nulo
@@ -287,7 +284,7 @@ cabeza → [7] → [13] → [18] → [24] → nulo
 
 El nodo `13` apunta a `18` y el nodo `7` pasa a apuntar a `13`, conservando el resto de la lista.
 
-**R/ 5. Eliminar 18.**
+R/ 5. Eliminar 18.
 
 ```text
 cabeza → [7] → [13] → [24] → nulo
@@ -303,7 +300,7 @@ Escribe pseudocódigo para:
 
 1. Recorrer la lista e imprimir todos sus datos.
 
-   **R/**
+   R/
 
    ```text
    función recorrer(cabeza):
@@ -320,7 +317,7 @@ Escribe pseudocódigo para:
 
 2. Buscar un valor y devolver si está presente.
 
-   **R/**
+   R/
 
    ```text
    función buscar(cabeza, valor):
@@ -341,7 +338,7 @@ Escribe pseudocódigo para:
 
 3. Insertar un nodo al comienzo, actualizando correctamente la referencia `cabeza`.
 
-   **R/**
+   R/
 
    ```text
    función insertarAlComienzo(cabeza, valor):
@@ -361,7 +358,7 @@ Explica cómo se comporta tu operación de insertar al comienzo cuando:
 
 - La lista está vacía.
 
-  **R/** El nuevo nodo apunta a `nulo` y la cabeza pasa a referenciarlo. Este nodo queda como el primero y el último de la lista.
+  R/ El nuevo nodo apunta a `nulo` y la cabeza pasa a referenciarlo. Este nodo queda como el primero y el último de la lista.
 
   ```text
   Antes:   cabeza → nulo
@@ -370,7 +367,7 @@ Explica cómo se comporta tu operación de insertar al comienzo cuando:
 
 - La lista ya tiene uno o más nodos.
 
-  **R/** El nuevo nodo apunta a la cabeza anterior y luego la cabeza se actualiza para apuntar al nuevo nodo. Los demás enlaces permanecen iguales.
+  R/ El nuevo nodo apunta a la cabeza anterior y luego la cabeza se actualiza para apuntar al nuevo nodo. Los demás enlaces permanecen iguales.
 
   ```text
   Antes:   cabeza → [13] → [24] → nulo
@@ -384,7 +381,7 @@ Explica cómo se comporta tu operación de insertar al comienzo cuando:
 
 ¿Qué referencias deben actualizarse al eliminar el primer nodo? Apóyate con un diagrama antes y después.
 
-**R/** La cabeza debe apuntar al siguiente nodo del que se elimina. Si la lista tiene un solo nodo, la cabeza pasa a ser `nulo`; si además existe una referencia al último nodo, también debe quedar en `nulo`. Si está vacía, no se realiza ninguna eliminación.
+R/ La cabeza debe apuntar al siguiente nodo del que se elimina. Si la lista tiene un solo nodo, la cabeza pasa a ser `nulo`; si además existe una referencia al último nodo, también debe quedar en `nulo`. Si está vacía, no se realiza ninguna eliminación.
 
 ```text
 Antes:
@@ -414,7 +411,7 @@ Tres procesos, `P1`, `P2` y `P3`, esperan recibir turnos en una lista circular. 
 
 1. Dibuja la lista circular inicial, incluyendo el enlace del último nodo al primero.
 
-   **R/** Se toma `P1` como el primer proceso en recibir un turno.
+   R/ Se toma `P1` como el primer proceso en recibir un turno.
 
    ```text
    cabeza → [P1] → [P2] → [P3] ← último
@@ -426,7 +423,7 @@ Tres procesos, `P1`, `P2` y `P3`, esperan recibir turnos en una lista circular. 
 
 2. Registra los primeros siete turnos: indica qué proceso recibe cada uno y cuál será el siguiente.
 
-   **R/** Se supone que `P1` y `P3` permanecen activos durante los siete turnos, ya que el enunciado solo indica que `P2` termina.
+   R/ Se supone que `P1` y `P3` permanecen activos durante los siete turnos, ya que el enunciado solo indica que `P2` termina.
 
    | Turno | Proceso atendido | Siguiente proceso | Observación |
    |---:|---|---|---|
@@ -442,7 +439,7 @@ Tres procesos, `P1`, `P2` y `P3`, esperan recibir turnos en una lista circular. 
 
 3. Dibuja la lista después de retirar `P2`. Verifica que el último nodo siga apuntando al primero.
 
-   **R/**
+   R/
 
    ```text
    cabeza → [P1] → [P3] ← último
@@ -454,7 +451,7 @@ Tres procesos, `P1`, `P2` y `P3`, esperan recibir turnos en una lista circular. 
 
 4. ¿Qué condición usarías para detener un recorrido de todos los nodos, dado que no se llega a `nulo`?
 
-   **R/** Guardaría la referencia al nodo inicial y detendría el recorrido cuando se vuelva a ese mismo nodo, comparando referencias y no los datos. Si la lista está vacía, no se inicia el recorrido.
+   R/ Guardaría la referencia al nodo inicial y detendría el recorrido cuando se vuelva a ese mismo nodo, comparando referencias y no los datos. Si la lista está vacía, no se inicia el recorrido.
 
    ```text
    si cabeza ≠ nulo:
@@ -472,11 +469,11 @@ Explica qué enlaces se deben actualizar al eliminar un nodo en cada caso:
 
 1. La lista está vacía.
 
-   **R/** No se modifica ningún enlace porque no existen nodos. La cabeza permanece en `nulo` y, si se guarda una referencia al último nodo, también permanece en `nulo`.
+   R/ No se modifica ningún enlace porque no existen nodos. La cabeza permanece en `nulo` y, si se guarda una referencia al último nodo, también permanece en `nulo`.
 
 2. La lista contiene un solo nodo.
 
-   **R/** Se elimina el único nodo, que apuntaba a sí mismo. La cabeza y la referencia al último nodo (si existe) deben quedar en `nulo`, y se puede limpiar el enlace del nodo retirado.
+   R/ Se elimina el único nodo, que apuntaba a sí mismo. La cabeza y la referencia al último nodo (si existe) deben quedar en `nulo`, y se puede limpiar el enlace del nodo retirado.
 
    ```text
    Antes:
@@ -490,7 +487,7 @@ Explica qué enlaces se deben actualizar al eliminar un nodo en cada caso:
 
 3. Se elimina el nodo que actualmente se considera primero.
 
-   **R/** Si existen dos o más nodos, la cabeza pasa al segundo nodo y el enlace siguiente del último debe apuntar a la nueva cabeza. Así se conserva el ciclo.
+   R/ Si existen dos o más nodos, la cabeza pasa al segundo nodo y el enlace siguiente del último debe apuntar a la nueva cabeza. Así se conserva el ciclo.
 
    ```text
    Antes:
@@ -506,7 +503,7 @@ Explica qué enlaces se deben actualizar al eliminar un nodo en cada caso:
 
 4. Se elimina el último nodo.
 
-   **R/** Si existen dos o más nodos, se localiza el nodo anterior al último y se cambia su enlace siguiente para que apunte a la cabeza. Si se guarda una referencia al último, se actualiza para apuntar al nuevo último nodo.
+   R/ Si existen dos o más nodos, se localiza el nodo anterior al último y se cambia su enlace siguiente para que apunte a la cabeza. Si se guarda una referencia al último, se actualiza para apuntar al nuevo último nodo.
 
    ```text
    Antes:
@@ -540,7 +537,7 @@ Lunes ⇄ Martes ⇄ Miércoles ⇄ Jueves
 
 1. Dibuja cada nodo con su dato, su enlace `anterior` y su enlace `siguiente`.
 
-   **R/** Cada flecha hacia la derecha representa `siguiente` y cada flecha hacia la izquierda representa `anterior`.
+   R/ Cada flecha hacia la derecha representa `siguiente` y cada flecha hacia la izquierda representa `anterior`.
 
    ```text
    cabeza                                         último
@@ -562,7 +559,7 @@ Lunes ⇄ Martes ⇄ Miércoles ⇄ Jueves
 
 2. Recorre la lista desde el comienzo hasta el final y escribe el orden de los datos.
 
-   **R/** Siguiendo la referencia `siguiente` desde la cabeza:
+   R/ Siguiendo la referencia `siguiente` desde la cabeza:
 
    ```text
    Lunes → Martes → Miércoles → Jueves → nulo
@@ -570,7 +567,7 @@ Lunes ⇄ Martes ⇄ Miércoles ⇄ Jueves
 
 3. Recorre desde el final hasta el comienzo y escribe el orden inverso.
 
-   **R/** Siguiendo la referencia `anterior` desde el último nodo:
+   R/ Siguiendo la referencia `anterior` desde el último nodo:
 
    ```text
    Jueves → Miércoles → Martes → Lunes → nulo
@@ -586,7 +583,7 @@ Parte de la lista anterior.
 
 Dibuja el resultado después de cada operación. Para la eliminación, señala qué referencias `anterior` y `siguiente` cambian en los nodos vecinos.
 
-**R/ 1. Insertar Domingo antes de Lunes.**
+R/ 1. Insertar Domingo antes de Lunes.
 
 ```text
 cabeza → [Domingo] ⇄ [Lunes] ⇄ [Martes] ⇄ [Miércoles] ⇄ [Jueves] ← último
@@ -596,7 +593,7 @@ Jueves.siguiente → nulo
 
 `Domingo.siguiente` apunta a `Lunes`, `Lunes.anterior` apunta a `Domingo` y la cabeza pasa a ser `Domingo`.
 
-**R/ 2. Insertar Viernes después de Jueves.**
+R/ 2. Insertar Viernes después de Jueves.
 
 ```text
 cabeza → [Domingo] ⇄ [Lunes] ⇄ [Martes] ⇄ [Miércoles] ⇄ [Jueves] ⇄ [Viernes] ← último
@@ -606,7 +603,7 @@ Viernes.siguiente → nulo
 
 `Jueves.siguiente` apunta a `Viernes`, `Viernes.anterior` apunta a `Jueves` y el último nodo pasa a ser `Viernes`.
 
-**R/ 3. Eliminar Miércoles.**
+R/ 3. Eliminar Miércoles.
 
 ```text
 cabeza → [Domingo] ⇄ [Lunes] ⇄ [Martes] ⇄ [Jueves] ⇄ [Viernes] ← último
@@ -627,7 +624,7 @@ Se desconecta `Miércoles` y se pueden limpiar sus dos referencias. De esta mane
 
 En 3–5 líneas, explica una ventaja y un costo de usar una lista doble en lugar de una lista simple. Usa el recorrido hacia atrás del ejercicio anterior en tu explicación.
 
-**R/** Una lista doble permite recorrer sus nodos en ambos sentidos.  
+R/ Una lista doble permite recorrer sus nodos en ambos sentidos.  
 Por ejemplo, se puede pasar de Jueves a Miércoles directamente usando `anterior`.  
 Su costo es que cada nodo necesita almacenar una referencia adicional.  
 También se deben actualizar más enlaces al insertar o eliminar elementos.
@@ -638,7 +635,7 @@ También se deben actualizar más enlaces al insertar o eliminar elementos.
 
 Completa la tabla. Indica **O(1)** u **O(n)** bajo los supuestos de la columna “Representación”. Si necesitas hacer un supuesto adicional, escríbelo junto a la respuesta.
 
-**R/** La complejidad se analiza en el peor caso, suponiendo que acceder y actualizar una referencia toma tiempo constante.
+R/ La complejidad se analiza en el peor caso, suponiendo que acceder y actualizar una referencia toma tiempo constante.
 
 | Estructura y representación | Operación | Complejidad | Justificación breve |
 |---|---|---|---|
@@ -654,15 +651,15 @@ Responde además:
 
 1. ¿Por qué una cola enlazada que solo guarda la referencia al frente podría tardar más en encolar al final que una que también guarda la referencia al último nodo?
 
-   **R/** Porque, si solo se conoce el frente, es necesario recorrer los nodos hasta encontrar el último, lo que tiene una complejidad de O(n). Si también se guarda el final, se accede directamente a él y se realiza la inserción en O(1).
+R/ Porque, si solo se conoce el frente, es necesario recorrer los nodos hasta encontrar el último, lo que tiene una complejidad de O(n). Si también se guarda el final, se accede directamente a él y se realiza la inserción en O(1).
 
 2. Para una aplicación que necesita volver repetidamente al primer elemento al llegar al final, ¿qué ventaja ofrece la lista circular?
 
-   **R/** Permite regresar directamente al primer nodo mediante el enlace siguiente del último. Así se continúa el recorrido de forma natural y sin tener que reiniciarlo manualmente.
+R/ Permite regresar directamente al primer nodo mediante el enlace siguiente del último. Así se continúa el recorrido de forma natural y sin tener que reiniciarlo manualmente.
 
 3. ¿Qué información adicional almacena una lista doble frente a una simple, y qué permite hacer esa información?
 
-   **R/** Almacena una referencia al nodo anterior, además de la referencia al siguiente. Esto permite avanzar y retroceder directamente, y facilita la eliminación de un nodo conocido al acceder a sus dos vecinos sin buscarlos desde la cabeza.
+R/ Almacena una referencia al nodo anterior, además de la referencia al siguiente. Esto permite avanzar y retroceder directamente, y facilita la eliminación de un nodo conocido al acceder a sus dos vecinos sin buscarlos desde la cabeza.
 
 ---
 
@@ -670,7 +667,7 @@ Responde además:
 
 En un párrafo de 5 a 8 líneas, explica cómo se relacionan la forma de conectar los nodos y el orden en que se insertan o retiran datos. Menciona al menos tres de estas estructuras: pila, cola, lista simple, lista circular y lista doble.
 
-**R/** La forma de conectar los nodos influye directamente en cómo se accede a los datos y se modifican.  
+R/ La forma de conectar los nodos influye directamente en cómo se accede a los datos y se modifican.  
 En una pila, se utiliza el tope para insertar y retirar primero el último elemento agregado.  
 En una cola, se agrega al final y se retira desde el frente para respetar el orden de llegada.  
 La lista simple permite recorrer los nodos en un solo sentido y realizar inserciones al comienzo.  
