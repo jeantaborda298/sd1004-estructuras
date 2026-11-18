@@ -23,7 +23,9 @@ Cubre: Clase 2 (Big O) · Clase 3 (Arreglos 1D) · Clase 4 (Arreglos 2D)
 Para cada situación, indica si corresponde a **O(1)**, **O(log n)**, **O(n)** o **O(n²)**, y explica por qué usando tus propias palabras (no hace falta fórmula matemática).
 
 1. Buscar una palabra en un diccionario físico, abriendo siempre por la mitad de las páginas que quedan.
+
 R/ En cada paso se reduce la búsqueda a la mitad de las páginas restantes, lo que permite encontrar la palabra sin necesidad de revisar todas las páginas del diccionario.
+
 2. Revisar, uno por uno, cada carné en una caja de carnés de estudiantes hasta encontrar el que buscas.
 3. Sacar la primera carta de un mazo ya barajado.
 4. Comparar cada estudiante de un salón con cada uno de los demás estudiantes, para ver si algún par cumple años el mismo día.
