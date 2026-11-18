@@ -89,7 +89,12 @@ Vas a guardar las calificaciones de 6 estudiantes de un curso en un arreglo llam
 
 
 2. Si `notas = [3.5, 4.2, 2.8, 5.0, 3.9, 4.5]`, ¿qué valor y qué índice tiene la tercera nota que ingresaste?
+
+R/ Valor 2.8 en el índice 2
+
 3. ¿Cuál es la instrucción (en pseudocódigo) para acceder directamente a la nota del último estudiante sin recorrer el arreglo?
+
+R/ notas[5]
 
 ### 2.2 Direcciones de memoria
 
@@ -99,24 +104,67 @@ Supón que el arreglo `notas` del punto anterior se guarda en memoria RAM empeza
 
    `dirección = base + (índice × tamaño)`
 
+R/notas[0]	0x2000 + (0 × 4)	0x2000
+notas[3]	0x2000 + (3 × 4)	0x200C
+notas[5]	0x2000 + (5 × 4)	0x2014
+   
+
 2. Explica en tus palabras por qué acceder a `notas[3]` es igual de rápido que acceder a `notas[0]` — no importa cuál pidas, es O(1).
+
+R/ Al conocer la dirección inicial, el índice y el tamaño de cada elemento, podemos calcular directamente su ubicación en memoria sin necesidad de recorrer las posiciones anteriores.
+
 
 ### 2.3 Búsqueda lineal vs. binaria
 
 Tienes el arreglo ordenado `edades = [15, 18, 20, 23, 27, 31, 35, 40]`.
 
 1. Simula paso a paso una **búsqueda lineal** para encontrar el valor `31`. ¿Cuántas comparaciones hiciste?
+
+R/ 6 Comparaciones 
+
+1	15	No
+2	18	No
+3	20	No
+4	23	No
+5	27	No
+6	31	Encontrado
+
 2. Simula paso a paso una **búsqueda binaria** para encontrar el mismo valor `31`. ¿Cuántas comparaciones hiciste?
+
+R/ 2 Comparaciones
+
+1: índice 3 valor 23, 31 es mayor, se busca a la derecha 
+2: índice 5 valor 31, encontrado
+
 3. ¿Por qué la búsqueda binaria solo funciona si el arreglo ya está ordenado?
+
+R/ Porque necesita que los elementos estén ordenados para determinar en qué mitad se encuentra el valor buscado y descartar la otra sin revisarla.
+
 4. Si el arreglo tuviera 1 millón de elementos, ¿cuál de las dos búsquedas seguirías usando? Justifica con lo visto sobre O(n) vs. O(log n).
+
+R/ Búsqueda binaria — O(log n), utilizaría la búsqueda binaria, ya que reduce a la mitad los elementos restantes en cada paso, necesitando muchas menos comparaciones que la búsqueda lineal, siempre que el arreglo esté ordenado.
+
 
 ### 2.4 Insertar un elemento
 
 Tienes `edades = [15, 18, 20, 23, 27]` (5 casillas, sin espacio libre).
 
 1. ¿Qué tan costoso es insertar un nuevo valor **al final**, si hay espacio disponible? ¿Y si no hay espacio y hay que crear un arreglo más grande?
+
+R/ Con espacio disponible O(1): Si hay espacio disponible, se inserta el elemento directamente al final.
+Sin espacio disponible O(n): Si no hay espacio, se debe crear un arreglo más grande y copiar todos los elementos anteriores antes de insertar el nuevo valor.
+
 2. ¿Qué tan costoso es insertar el valor `21` **en la mitad** (para que quede ordenado)? Explica qué hay que hacer con los demás elementos.
+
+R7 O(n) es costoso, se deben desplazar hacia la derecha los elementos posteriores a la posición donde se insertará el valor 21, para conservar el orden del arreglo. Si no hay espacio, también será necesario crear un arreglo más grande.
+
 3. Compara ambos casos usando notación Big O.
+
+R/Al final con espacio	O(1)	Se inserta directamente el elemento.
+Al final sin espacio	O(n)	Se deben copiar todos los elementos.
+En la mitad con espacio	O(n)	Se deben desplazar los elementos posteriores.
+En la mitad sin espacio	O(n)	Se debe crear otro arreglo y copiar los elementos conservando el orden.
+
 
 ---
 
