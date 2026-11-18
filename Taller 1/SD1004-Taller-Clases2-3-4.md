@@ -175,8 +175,19 @@ En la mitad sin espacio	O(n)	Se debe crear otro arreglo y copiar los elementos c
 Vas a guardar la disposición de un salón de clase de 3 filas x 4 columnas, donde cada casilla indica si el puesto está ocupado (`1`) o libre (`0`).
 
 1. Dibuja la matriz `salon` con sus 3 filas y 4 columnas, con los índices `[fila][columna]` de cada casilla.
+
+R/ <img width="990" height="548" alt="image" src="https://github.com/user-attachments/assets/fa13dbf6-fd34-48f8-aa43-a19a1dd7d3c4" />
+
+
 2. Escribe (en pseudocódigo) cómo accedes al puesto de la fila 2, columna 3.
+
+R/ puesto = salon[2][3]
+
 3. ¿Cuántas casillas tiene en total esta matriz? ¿Cómo lo calculas en general para `filas × columnas`?
+
+R/ Para conocer la cantidad total de casillas, se multiplica el número de filas por el número de columnas.
+tiene 3x4=12 Casillas
+
 
 ### 3.2 De 2D a memoria (row-major)
 
@@ -185,11 +196,33 @@ La memoria RAM es una sola fila continua de casillas — no existen "filas y col
 Supón que `salon` (3 filas x 4 columnas) se guarda empezando en la dirección **0x1000**, con cada valor ocupando **4 bytes**, en orden por filas (row-major).
 
 1. Dibuja cómo quedarían las 12 casillas de `salon` en una sola fila de memoria (aplanadas).
+
+R/ <img width="988" height="92" alt="image" src="https://github.com/user-attachments/assets/f78e9f53-5b35-43cc-b800-9f9743ee902e" />
+
+
 2. Calcula la dirección de memoria de la casilla `[1][2]`, usando la fórmula:
 
    `dirección = base + ((fila × número_de_columnas + columna) × tamaño)`
 
+R/ 0x1000 + ((1 * 4 + 2) * 4)
+
+0x1000 + (6*4)
+
+0x1000 + 24
+
+Se convierte 24 en hexadecimal: 0x18
+
+=0x1018
+
 3. Calcula también la dirección de `[0][0]` y de `[2][3]` (la última casilla).
+
+R/ Casilla [0][0]:  0x1000 + ((0*4+0)*4)
+0x1000
+
+Casilla [2][3]:  0x1000 + ((2*4+3)*4)
+0x1000+(11*4)
+0x1000+44
+
 
 ### 3.3 Recorrido con ciclos anidados
 
