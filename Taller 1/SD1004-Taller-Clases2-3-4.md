@@ -229,12 +229,30 @@ Casilla [2][3]:  0x1000 + ((2*4+3)*4)
 Quieres contar cuántos puestos están ocupados (`1`) en toda la matriz `salon`.
 
 1. Describe en pseudocódigo el recorrido usando dos ciclos anidados (uno para filas, otro para columnas).
+
+R/ ocupados = 0
+
+Para fila desde 0 hasta 2:
+    Para columna desde 0 hasta 3:
+        Si salon[fila][columna] == 1:
+            ocupados = ocupados + 1
+Mostrar ocupados
+
 2. Si la matriz tiene `f` filas y `c` columnas, ¿cuál es la complejidad de este recorrido en notación Big O? Explica por qué.
+
+R/  O(f * c):  Por cada fila se deben recorrer todas sus columnas, por lo que la cantidad de operaciones depende de la multiplicación del número de filas por el número de columnas.
+
 3. ¿Qué pasaría con el tiempo de ejecución si `f` y `c` se duplican ambos a la vez?
+
+R/ Al duplicar tanto las filas como las columnas, la cantidad de casillas que se deben recorrer se multiplica por cuatro, aumentando aproximadamente cuatro veces el tiempo de ejecución.
+
 
 ### 3.4 Conectando todo
 
 En un párrafo corto (5-8 líneas), explica con tus propias palabras la relación entre estos tres conceptos vistos en las últimas tres clases: **Big O**, **arreglos 1D** y **arreglos 2D**. Pista: piensa en por qué entender la complejidad te ayuda a decidir cuándo usar un arreglo 1D, cuándo una matriz, y cuándo buscar de forma lineal o binaria.
+
+R/ Big O nos permite conocer qué tan eficiente es un algoritmo a medida que aumenta la cantidad de datos, los arreglos 1D nos permiten organizar elementos en una sola dimensión, mientras que los arreglos 2D nos permiten organizarlos mediante filas y columnas; comprender la complejidad algorítmica nos ayuda a elegir la estructura de datos que mejor se adapte al problema y a determinar qué método de búsqueda es más conveniente, por ejemplo, si tenemos un arreglo ordenado, podemos utilizar la búsqueda binaria, ya que requiere menos comparaciones que la búsqueda lineal para grandes cantidades de datos.
+
 
 ---
 
